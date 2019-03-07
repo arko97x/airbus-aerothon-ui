@@ -8,6 +8,7 @@ import 'package:http/http.dart' as http;
 import 'Constants.dart';
 import 'package:json_annotation/json_annotation.dart';
 
+
 void main() => runApp(MyApp());
 
 class MyApp extends StatelessWidget {
@@ -147,51 +148,39 @@ class A320Page extends StatefulWidget {
   _A320PageState createState() => _A320PageState();
 }
 
+@JsonSerializable()
 class _A320PageState extends State<A320Page> {
 
-  static TextEditingController msn = new TextEditingController();
-  static TextEditingController flightNo = new TextEditingController();
-  static TextEditingController harnessLength = new TextEditingController();
-  static TextEditingController grossWeight = new TextEditingController();
-  static TextEditingController atmP = new TextEditingController();
-  static TextEditingController roomTemp = new TextEditingController();
-  static TextEditingController airport = new TextEditingController();
-  static TextEditingController fcapLwing = new TextEditingController();
-  static TextEditingController fcapRwing = new TextEditingController(); 
-  static TextEditingController fquantLwing = new TextEditingController();
-  static TextEditingController fquantRwing = new TextEditingController();
-  static TextEditingController maxAltitude = new TextEditingController();
+  static final msn = new TextEditingController();
+  static final flightNo = new TextEditingController();
+  static final harnessLength = new TextEditingController();
+  static final grossWeight = new TextEditingController();
+  static final atmP = new TextEditingController();
+  static final roomTemp = new TextEditingController();
+  static final airport = new TextEditingController();
+  static final fcapLwing = new TextEditingController();
+  static final fcapRwing = new TextEditingController(); 
+  static final fquantLwing = new TextEditingController();
+  static final fquantRwing = new TextEditingController();
+  static final maxAltitude = new TextEditingController();
 
-  /*String str_msn = msn.text;
-  String str_flightNo = flightNo.text;
-  String str_harnessLength =harnessLength.text;
-  String str_grossWeight =grossWeight.text;
-  String str_atmP =atmP.text;
-  String str_roomTemp =roomTemp.text;
-  String str_airport =airport.text;
-  String str_fcapLwing =fcapLwing.text;
-  String str_fcapRwing =fcapRwing.text;
-  String str_fquantLwing =fquantLwing.text;
-  String str_fquantRwing =fquantRwing.text;
-  String str_maxAltitude =maxAltitude.text;
+  // static Map<String, dynamic> toJson() =>
+  //   {
+  //     'msn': msn.text,
+  //     'flightNo': flightNo.text,
+  //     'harnessLength': harnessLength.text,
+  //     'grossWeight': grossWeight.text,
+  //     'atmP': atmP.text,
+  //     'roomTemp': roomTemp.text,
+  //     'airport': airport.text,
+  //     'fcapLwing': fcapLwing.text,
+  //     'fcapRwing': fcapRwing.text,
+  //     'fquantLwing': fquantLwing.text,
+  //     'fquantRwing': fquantRwing.text,
+  //     'maxAltitude': maxAltitude.text,
+  //   };
 
-  Map<String, dynamic> toJson() =>
-    {
-      'msn': str_msn,
-      'flightNo': str_flightNo,
-      'harnessLength': str_harnessLength,
-      'grossWeight': str_grossWeight,
-      'atmP': str_atmP,
-      'roomTemp': str_roomTemp,
-      'airport': str_airport,
-      'fcapLwing': str_fcapLwing,
-      'fcapRwing': str_fcapRwing,
-      'fquantLwing': str_fquantLwing,
-      'fquantRwing': str_fquantRwing,
-      'maxAltitude': str_maxAltitude,
-    };*/
-
-  //final formData =http.post("https://airbus-aerothon.herokuapp.com/aerothon/flight");
+  //final formData = http.post("https://airbus-aerothon.herokuapp.com/aerothon/flight", body: toJson());
 
   @override
   Widget build(BuildContext context) {
@@ -201,7 +190,24 @@ class _A320PageState extends State<A320Page> {
         actions: <Widget>[
           CupertinoButton(
               child: Text('SEND', style: TextStyle(color: CupertinoColors.white,)),
-              onPressed: () {
+              onPressed: () async {
+                Map<String, dynamic> toJson() =>
+    {
+      "msn": msn.text,
+      "flightNo": flightNo.text,
+      "harnessLength": harnessLength.text,
+      "grossWeight": grossWeight.text,
+      "atmP": atmP.text,
+      "roomTemp": roomTemp.text,
+      "airport": airport.text,
+      "fcapLwing": fcapLwing.text,
+      "fcapRwing": fcapRwing.text,
+      "fquantLwing": fquantLwing.text,
+      "fquantRwing": fquantRwing.text,
+      "maxAltitude": maxAltitude.text,
+    };
+                http.post("https://airbus-aerothon.herokuapp.com/aerothon/flight", body: toJson());
+                debugPrint(msn.text);
               },
               color: Colors.blue,
             ),
@@ -214,6 +220,7 @@ class _A320PageState extends State<A320Page> {
           child: Column(
           children: <Widget>[
             TextField(
+              controller: msn,
               keyboardType: TextInputType.text,
               decoration: new InputDecoration(
                 labelText: 'MSN',
@@ -222,6 +229,7 @@ class _A320PageState extends State<A320Page> {
             ),
 
             TextField(
+              controller: flightNo,
               keyboardType: TextInputType.text,
               decoration: new InputDecoration(
                 labelText: 'Flight No',
@@ -230,6 +238,7 @@ class _A320PageState extends State<A320Page> {
             ),
 
             TextField(
+              controller: harnessLength,
               keyboardType: TextInputType.number,
               decoration: new InputDecoration(
                 labelText: 'Harness Length',
@@ -238,6 +247,7 @@ class _A320PageState extends State<A320Page> {
             ),
 
             TextField(
+              controller: grossWeight,
               keyboardType: TextInputType.number,
               decoration: new InputDecoration(
                 labelText: 'Gross Weight',
@@ -246,6 +256,7 @@ class _A320PageState extends State<A320Page> {
             ),
 
             TextField(
+              controller: atmP,
               keyboardType: TextInputType.number,
               decoration: new InputDecoration(
                 labelText: 'Atm Press',
@@ -254,6 +265,7 @@ class _A320PageState extends State<A320Page> {
             ),
 
             TextField(
+              controller: roomTemp,
               keyboardType: TextInputType.number,
               decoration: new InputDecoration(
                 labelText: 'Room Temp',
@@ -262,6 +274,7 @@ class _A320PageState extends State<A320Page> {
             ),
 
             TextField(
+              controller: airport,
               keyboardType: TextInputType.text,
               decoration: new InputDecoration(
                 labelText: 'Airport',
@@ -270,6 +283,7 @@ class _A320PageState extends State<A320Page> {
             ),
 
             TextField(
+              controller: fcapLwing,
               keyboardType: TextInputType.number,
               decoration: new InputDecoration(
                 labelText: 'Fuel Cap (L)',
@@ -278,6 +292,7 @@ class _A320PageState extends State<A320Page> {
             ),
 
             TextField(
+              controller: fcapRwing,
               keyboardType: TextInputType.number,
               decoration: new InputDecoration(
                 labelText: 'Fuel Cap (R)',
@@ -286,6 +301,7 @@ class _A320PageState extends State<A320Page> {
             ),
 
             TextField(
+              controller: fquantLwing,
               keyboardType: TextInputType.number,
               decoration: new InputDecoration(
                 labelText: 'Fuel Quant (L)',
@@ -294,6 +310,7 @@ class _A320PageState extends State<A320Page> {
             ),
 
             TextField(
+              controller: fquantRwing,
               keyboardType: TextInputType.number,
               decoration: new InputDecoration(
                 labelText: 'Fuel Quant (R)',
@@ -302,6 +319,7 @@ class _A320PageState extends State<A320Page> {
             ),
 
             TextField(
+              controller: maxAltitude,
               keyboardType: TextInputType.number,
               decoration: new InputDecoration(
                 labelText: 'Max Target Altitude',
