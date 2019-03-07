@@ -109,7 +109,7 @@ class _MyHomePageState extends State<MyHomePage> {
       bottomNavigationBar: Padding(
         padding: const EdgeInsets.all(8.0),
         child: RaisedButton(
-            child: new Text("Fetch Data"),
+            child: new Text("Refresh Feed"),
             onPressed: _fetchData,
           ),
       ),
@@ -148,14 +148,137 @@ class A320Page extends StatefulWidget {
 
 class _A320PageState extends State<A320Page> {
 
+  TextEditingController msn = new TextEditingController();
+  TextEditingController flightNo = new TextEditingController();
+  TextEditingController harnessLength = new TextEditingController();
+  TextEditingController grossWeight = new TextEditingController();
+  TextEditingController atmP = new TextEditingController();
+  TextEditingController roomTemp = new TextEditingController();
+  TextEditingController airport = new TextEditingController();
+  TextEditingController fcapLwing = new TextEditingController();
+  TextEditingController fcapRwing = new TextEditingController(); 
+  TextEditingController fquantLwing = new TextEditingController();
+  TextEditingController fquantRwing = new TextEditingController();
+  TextEditingController maxAltitude = new TextEditingController();
+
   @override
   Widget build(BuildContext context) {
     return Scaffold(
       appBar: AppBar(
         title: Text('A320'),
+        actions: <Widget>[
+          CupertinoButton(
+              child: Text('SEND', style: TextStyle(color: CupertinoColors.white,)),
+              onPressed: () {
+              },
+              color: Colors.blue,
+            ),
+        ],
       ),
       body: Container(
-        child: Text('A320 Page Details'),
+        width: 400.0,
+        padding: EdgeInsets.only(top: 20.0, left: 20.0),
+        child: SingleChildScrollView(
+          child: Column(
+          children: <Widget>[
+            TextField(
+              keyboardType: TextInputType.text,
+              decoration: new InputDecoration(
+                labelText: 'MSN',
+                hintText: 'MSN'
+              ),
+            ),
+
+            TextField(
+              keyboardType: TextInputType.text,
+              decoration: new InputDecoration(
+                labelText: 'Flight No',
+                hintText: 'Flight No'
+              ),
+            ),
+
+            TextField(
+              keyboardType: TextInputType.number,
+              decoration: new InputDecoration(
+                labelText: 'Harness Length',
+                hintText: 'Harness Length'
+              ),
+            ),
+
+            TextField(
+              keyboardType: TextInputType.number,
+              decoration: new InputDecoration(
+                labelText: 'Gross Weight',
+                hintText: 'Gross Weight'
+              ),
+            ),
+
+            TextField(
+              keyboardType: TextInputType.number,
+              decoration: new InputDecoration(
+                labelText: 'Atm Press',
+                hintText: 'Atmospheric Pressure'
+              ),
+            ),
+
+            TextField(
+              keyboardType: TextInputType.number,
+              decoration: new InputDecoration(
+                labelText: 'Room Temp',
+                hintText: 'Room Temperature'
+              ),
+            ),
+
+            TextField(
+              keyboardType: TextInputType.text,
+              decoration: new InputDecoration(
+                labelText: 'Airport',
+                hintText: 'Airport'
+              ),
+            ),
+
+            TextField(
+              keyboardType: TextInputType.number,
+              decoration: new InputDecoration(
+                labelText: 'Fuel Cap (L)',
+                hintText: 'Fuel Capacity (Left Wing)'
+              ),
+            ),
+
+            TextField(
+              keyboardType: TextInputType.number,
+              decoration: new InputDecoration(
+                labelText: 'Fuel Cap (R)',
+                hintText: 'Fuel Capacity (Right Wing)'
+              ),
+            ),
+
+            TextField(
+              keyboardType: TextInputType.number,
+              decoration: new InputDecoration(
+                labelText: 'Fuel Quant (L)',
+                hintText: 'Fuel Quantity (Left Wing)'
+              ),
+            ),
+
+            TextField(
+              keyboardType: TextInputType.number,
+              decoration: new InputDecoration(
+                labelText: 'Fuel Quant (R)',
+                hintText: 'Fuel Quantity (Right Wing)'
+              ),
+            ),
+
+            TextField(
+              keyboardType: TextInputType.number,
+              decoration: new InputDecoration(
+                labelText: 'Max Target Altitude',
+                hintText: 'Maximum altitude to be reached'
+              ),
+            ),
+          ],
+        ),
+      ),
       ),
     );
   }
@@ -163,7 +286,7 @@ class _A320PageState extends State<A320Page> {
 
 class A330PageRoute extends CupertinoPageRoute {
   A330PageRoute()
-    : super(builder: (BuildContext context) => new A320Page());
+    : super(builder: (BuildContext context) => new A330Page());
 }
 
 class A330Page extends StatefulWidget {
@@ -177,14 +300,137 @@ class A330Page extends StatefulWidget {
 
 class _A330PageState extends State<A330Page> {
 
+  TextEditingController msn = new TextEditingController();
+  TextEditingController flightNo = new TextEditingController();
+  TextEditingController harnessLength = new TextEditingController();
+  TextEditingController grossWeight = new TextEditingController();
+  TextEditingController atmP = new TextEditingController();
+  TextEditingController roomTemp = new TextEditingController();
+  TextEditingController airport = new TextEditingController();
+  TextEditingController fcapLwing = new TextEditingController();
+  TextEditingController fcapRwing = new TextEditingController(); 
+  TextEditingController fquantLwing = new TextEditingController();
+  TextEditingController fquantRwing = new TextEditingController();
+  TextEditingController maxAltitude = new TextEditingController();
+
   @override
   Widget build(BuildContext context) {
     return Scaffold(
       appBar: AppBar(
         title: Text('A330'),
+        actions: <Widget>[
+          CupertinoButton(
+              child: Text('SEND', style: TextStyle(color: CupertinoColors.white,)),
+              onPressed: () {
+              },
+              color: Colors.blue,
+            ),
+        ],
       ),
       body: Container(
-        child: Text('A330 Page Details'),
+        width: 400.0,
+        padding: EdgeInsets.only(top: 20.0, left: 20.0),
+        child: SingleChildScrollView(
+          child: Column(
+          children: <Widget>[
+            TextField(
+              keyboardType: TextInputType.text,
+              decoration: new InputDecoration(
+                labelText: 'MSN',
+                hintText: 'MSN'
+              ),
+            ),
+
+            TextField(
+              keyboardType: TextInputType.text,
+              decoration: new InputDecoration(
+                labelText: 'Flight No',
+                hintText: 'Flight No'
+              ),
+            ),
+
+            TextField(
+              keyboardType: TextInputType.number,
+              decoration: new InputDecoration(
+                labelText: 'Harness Length',
+                hintText: 'Harness Length'
+              ),
+            ),
+
+            TextField(
+              keyboardType: TextInputType.number,
+              decoration: new InputDecoration(
+                labelText: 'Gross Weight',
+                hintText: 'Gross Weight'
+              ),
+            ),
+
+            TextField(
+              keyboardType: TextInputType.number,
+              decoration: new InputDecoration(
+                labelText: 'Atm Press',
+                hintText: 'Atmospheric Pressure'
+              ),
+            ),
+
+            TextField(
+              keyboardType: TextInputType.number,
+              decoration: new InputDecoration(
+                labelText: 'Room Temp',
+                hintText: 'Room Temperature'
+              ),
+            ),
+
+            TextField(
+              keyboardType: TextInputType.text,
+              decoration: new InputDecoration(
+                labelText: 'Airport',
+                hintText: 'Airport'
+              ),
+            ),
+
+            TextField(
+              keyboardType: TextInputType.number,
+              decoration: new InputDecoration(
+                labelText: 'Fuel Cap (L)',
+                hintText: 'Fuel Capacity (Left Wing)'
+              ),
+            ),
+
+            TextField(
+              keyboardType: TextInputType.number,
+              decoration: new InputDecoration(
+                labelText: 'Fuel Cap (R)',
+                hintText: 'Fuel Capacity (Right Wing)'
+              ),
+            ),
+
+            TextField(
+              keyboardType: TextInputType.number,
+              decoration: new InputDecoration(
+                labelText: 'Fuel Quant (L)',
+                hintText: 'Fuel Quantity (Left Wing)'
+              ),
+            ),
+
+            TextField(
+              keyboardType: TextInputType.number,
+              decoration: new InputDecoration(
+                labelText: 'Fuel Quant (R)',
+                hintText: 'Fuel Quantity (Right Wing)'
+              ),
+            ),
+
+            TextField(
+              keyboardType: TextInputType.number,
+              decoration: new InputDecoration(
+                labelText: 'Max Target Altitude',
+                hintText: 'Maximum altitude to be reached'
+              ),
+            ),
+          ],
+        ),
+      ),
       ),
     );
   }
@@ -192,7 +438,7 @@ class _A330PageState extends State<A330Page> {
 
 class A350PageRoute extends CupertinoPageRoute {
   A350PageRoute()
-    : super(builder: (BuildContext context) => new A320Page());
+    : super(builder: (BuildContext context) => new A350Page());
 }
 
 class A350Page extends StatefulWidget {
@@ -206,14 +452,137 @@ class A350Page extends StatefulWidget {
 
 class _A350PageState extends State<A350Page> {
 
+  TextEditingController msn = new TextEditingController();
+  TextEditingController flightNo = new TextEditingController();
+  TextEditingController harnessLength = new TextEditingController();
+  TextEditingController grossWeight = new TextEditingController();
+  TextEditingController atmP = new TextEditingController();
+  TextEditingController roomTemp = new TextEditingController();
+  TextEditingController airport = new TextEditingController();
+  TextEditingController fcapLwing = new TextEditingController();
+  TextEditingController fcapRwing = new TextEditingController(); 
+  TextEditingController fquantLwing = new TextEditingController();
+  TextEditingController fquantRwing = new TextEditingController();
+  TextEditingController maxAltitude = new TextEditingController();
+
   @override
   Widget build(BuildContext context) {
     return Scaffold(
       appBar: AppBar(
         title: Text('A350'),
+        actions: <Widget>[
+          CupertinoButton(
+              child: Text('SEND', style: TextStyle(color: CupertinoColors.white,)),
+              onPressed: () {
+              },
+              color: Colors.blue,
+            ),
+        ],
       ),
       body: Container(
-        child: Text('A350 Page Details'),
+        width: 400.0,
+        padding: EdgeInsets.only(top: 20.0, left: 20.0),
+        child: SingleChildScrollView(
+          child: Column(
+          children: <Widget>[
+            TextField(
+              keyboardType: TextInputType.text,
+              decoration: new InputDecoration(
+                labelText: 'MSN',
+                hintText: 'MSN'
+              ),
+            ),
+
+            TextField(
+              keyboardType: TextInputType.text,
+              decoration: new InputDecoration(
+                labelText: 'Flight No',
+                hintText: 'Flight No'
+              ),
+            ),
+
+            TextField(
+              keyboardType: TextInputType.number,
+              decoration: new InputDecoration(
+                labelText: 'Harness Length',
+                hintText: 'Harness Length'
+              ),
+            ),
+
+            TextField(
+              keyboardType: TextInputType.number,
+              decoration: new InputDecoration(
+                labelText: 'Gross Weight',
+                hintText: 'Gross Weight'
+              ),
+            ),
+
+            TextField(
+              keyboardType: TextInputType.number,
+              decoration: new InputDecoration(
+                labelText: 'Atm Press',
+                hintText: 'Atmospheric Pressure'
+              ),
+            ),
+
+            TextField(
+              keyboardType: TextInputType.number,
+              decoration: new InputDecoration(
+                labelText: 'Room Temp',
+                hintText: 'Room Temperature'
+              ),
+            ),
+
+            TextField(
+              keyboardType: TextInputType.text,
+              decoration: new InputDecoration(
+                labelText: 'Airport',
+                hintText: 'Airport'
+              ),
+            ),
+
+            TextField(
+              keyboardType: TextInputType.number,
+              decoration: new InputDecoration(
+                labelText: 'Fuel Cap (L)',
+                hintText: 'Fuel Capacity (Left Wing)'
+              ),
+            ),
+
+            TextField(
+              keyboardType: TextInputType.number,
+              decoration: new InputDecoration(
+                labelText: 'Fuel Cap (R)',
+                hintText: 'Fuel Capacity (Right Wing)'
+              ),
+            ),
+
+            TextField(
+              keyboardType: TextInputType.number,
+              decoration: new InputDecoration(
+                labelText: 'Fuel Quant (L)',
+                hintText: 'Fuel Quantity (Left Wing)'
+              ),
+            ),
+
+            TextField(
+              keyboardType: TextInputType.number,
+              decoration: new InputDecoration(
+                labelText: 'Fuel Quant (R)',
+                hintText: 'Fuel Quantity (Right Wing)'
+              ),
+            ),
+
+            TextField(
+              keyboardType: TextInputType.number,
+              decoration: new InputDecoration(
+                labelText: 'Max Target Altitude',
+                hintText: 'Maximum altitude to be reached'
+              ),
+            ),
+          ],
+        ),
+      ),
       ),
     );
   }
