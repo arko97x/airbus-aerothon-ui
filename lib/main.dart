@@ -43,7 +43,6 @@ class _MyHomePageState extends State<MyHomePage> {
     });
 
     final response = await http.get("https://airbus-aerothon.herokuapp.com/aerothon/news");
-    //final response =await http.get("https://jsonplaceholder.typicode.com/photos");
 
     if (response.statusCode == 200) {
       list = json.decode(response.body) as List;
