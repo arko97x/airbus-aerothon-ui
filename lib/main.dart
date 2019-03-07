@@ -6,6 +6,7 @@ import 'dart:async';
 import 'dart:convert';
 import 'package:http/http.dart' as http;
 import 'Constants.dart';
+import 'package:json_annotation/json_annotation.dart';
 
 void main() => runApp(MyApp());
 
@@ -148,18 +149,49 @@ class A320Page extends StatefulWidget {
 
 class _A320PageState extends State<A320Page> {
 
-  TextEditingController msn = new TextEditingController();
-  TextEditingController flightNo = new TextEditingController();
-  TextEditingController harnessLength = new TextEditingController();
-  TextEditingController grossWeight = new TextEditingController();
-  TextEditingController atmP = new TextEditingController();
-  TextEditingController roomTemp = new TextEditingController();
-  TextEditingController airport = new TextEditingController();
-  TextEditingController fcapLwing = new TextEditingController();
-  TextEditingController fcapRwing = new TextEditingController(); 
-  TextEditingController fquantLwing = new TextEditingController();
-  TextEditingController fquantRwing = new TextEditingController();
-  TextEditingController maxAltitude = new TextEditingController();
+  static TextEditingController msn = new TextEditingController();
+  static TextEditingController flightNo = new TextEditingController();
+  static TextEditingController harnessLength = new TextEditingController();
+  static TextEditingController grossWeight = new TextEditingController();
+  static TextEditingController atmP = new TextEditingController();
+  static TextEditingController roomTemp = new TextEditingController();
+  static TextEditingController airport = new TextEditingController();
+  static TextEditingController fcapLwing = new TextEditingController();
+  static TextEditingController fcapRwing = new TextEditingController(); 
+  static TextEditingController fquantLwing = new TextEditingController();
+  static TextEditingController fquantRwing = new TextEditingController();
+  static TextEditingController maxAltitude = new TextEditingController();
+
+  /*String str_msn = msn.text;
+  String str_flightNo = flightNo.text;
+  String str_harnessLength =harnessLength.text;
+  String str_grossWeight =grossWeight.text;
+  String str_atmP =atmP.text;
+  String str_roomTemp =roomTemp.text;
+  String str_airport =airport.text;
+  String str_fcapLwing =fcapLwing.text;
+  String str_fcapRwing =fcapRwing.text;
+  String str_fquantLwing =fquantLwing.text;
+  String str_fquantRwing =fquantRwing.text;
+  String str_maxAltitude =maxAltitude.text;
+
+  Map<String, dynamic> toJson() =>
+    {
+      'msn': str_msn,
+      'flightNo': str_flightNo,
+      'harnessLength': str_harnessLength,
+      'grossWeight': str_grossWeight,
+      'atmP': str_atmP,
+      'roomTemp': str_roomTemp,
+      'airport': str_airport,
+      'fcapLwing': str_fcapLwing,
+      'fcapRwing': str_fcapRwing,
+      'fquantLwing': str_fquantLwing,
+      'fquantRwing': str_fquantRwing,
+      'maxAltitude': str_maxAltitude,
+    };*/
+
+  //final formData =http.post("https://airbus-aerothon.herokuapp.com/aerothon/flight");
 
   @override
   Widget build(BuildContext context) {
